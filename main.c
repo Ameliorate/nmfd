@@ -51,7 +51,7 @@ int main(int argc, char **argv)
                 return 0;
         }
 
-        int grab = !(argc == 2 && (!strcmp(argv[1], "--no_grab") || !strcmp(argv[1], "-n")));
+        int grab = !(argc == 2 && (!strcmp(argv[1], "--no-grab") || !strcmp(argv[1], "-n")));
 
         int sidefd, extrafd = -1;
         for (int i = 0; i < DEVICES_COUNT; i++) {
