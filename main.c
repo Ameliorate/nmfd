@@ -42,7 +42,7 @@ const char *devices[DEVICES_COUNT][3] = {
 int main(int argc, char **argv)
 {
         int help = (argc == 2) && (!strcmp(argv[1], "--help")
-                                 || !strcmp(argv[1], "-h"));
+                                   || !strcmp(argv[1], "-h"));
         if (help) {
                 printf("USAGE: %s [-h] [-n]\n", argv[0]);
                 puts("nmfd acts as a driver for Razer Naga mice.");
@@ -50,7 +50,7 @@ int main(int argc, char **argv)
                 puts("See `man nmfd` for more details");
                 return 0;
         }
-        
+
         int grab = !(argc == 2 && (!strcmp(argv[1], "--no_grab") || !strcmp(argv[1], "-n")));
 
         int sidefd, extrafd = -1;
@@ -122,7 +122,7 @@ int main(int argc, char **argv)
 void rd_error(void)
 {
         fprintf(stderr, "Error: %m\n");
-        exit(2); 
+        exit(2);
         // In the future we might try to restart, in case of the condition that the mouse was unplugged for a short time.
         // For now exiting is good.
 }
