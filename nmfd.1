@@ -1,0 +1,68 @@
+.TH NMFD 1
+.SH NAME
+nmfd \- Driver for Razer Naga mice.
+.SH SYNOPSIS
+.B nmfd
+[\fB \-h \-\-help\fR]
+[\fB \-n \-\-no\-grab\fR]
+.SH DESCRIPTION
+.B nmfd
+simple driver for the side buttons on a Razer Naga mouse.
+.PP
+Each event is placed on a new line to stdout.
+Lines are formatted as a symbol, the button number, and a newline.
+If the line starts with a plus (+), then the button has been pressed.
+Similarly, the button has been depressed if the symbol is a minus (\-).
+Furthermore, a colon (:) denotes that the button has been held down.
+After the symbol, there is a number denoting which button on the mouse has been pressed.
+Numbers 1 through 12 represent the generic buttons on the side of the Razer Naga mouse.
+Numbers 13 and 14 represent the forwards and backwards buttons.
+The forwards and backwards do not yet support detection of being held down.
+Numbers 16 and 17 are reserved for the left and right tilt functions on the scrollwheel.
+The left, right, and middle click buttons on the mouse are not mapped to any number and will not cause any events if pressed.
+.PP
+If the mouse is unplugged, nmfd will exit and print "Error: No such device" to stderr.
+.SH SUPPORTED
+nmfd supports the following mice:
+.IP \[bu] 2
+Naga Epic
+.IP \[bu]
+Naga 2014
+.IP \[bu]
+Naga Molten
+.IP \[bu]
+Naga Epic Chroma
+.IP \[bu]
+Naga Chroma
+.IP \[bu]
+Naga Hex
+.SH OPTIONS
+.TP
+.BR \-h ", " \-\-help
+Display a short page of help info.
+.TP
+.BR \-n ", " \-\-no\-grab
+Keeps nmfd from grabbing the extra buttons on the mouse.
+With this option enabled, the default of buttons 1 through 9 typing numbers 1 through 9, 10 typing 0, 11 typing minus, and 12 typing equals will be enabled.
+.SH EXAMPLES
+In the following example, the buttons 1 and 3 are pressed in order, then the button 3 is pressed and held down.
+Finally, the forward and backward buttons are pressed in order.
+This example requires Driver Mode to be set for your mouse in order for the foreward and backward buttons to work.
+.PP
+.DS L
+$ nmfd
+ +1
+ -1
+ +3
+ -3
+ +3
+ :3
+ :3
+ :3
+ :3
+ -3
+ +13
+ -13
+ +14
+ -14
+
