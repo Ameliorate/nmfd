@@ -1,9 +1,11 @@
-TARGET = nmfd
-LIBS = -lm
-CC = gcc
-CFLAGS = -g -Wall
+TARGET=nmfd
+LIBS=
+CC?=gcc
+CFLAGS?=-g -Wall
+INSTALL_PATH?=/usr/local/bin
+MANUAL_PATH?=/usr/share/man/man1
 
-.PHONY: default all clean run format
+.PHONY: default all clean run format install uninstall
 
 default: $(TARGET)
 all: default
@@ -28,3 +30,14 @@ run: $(TARGET)
 
 format:
 	indent -linux -i8 -nut -l120 *.c
+
+install: $(TARGET)
+	install $(TARGET) $(INSTALL_PATH)
+	cp nmfd.1 $(MANUAL_PATH)
+	
+uninstall:
+	rm -f $(INSTALL_PATH)/$(TARGET)
+	rm -f $(MANUAL_PATH)/nmfd.1
+	
+check:
+	test -f $(TARGET)
