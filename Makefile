@@ -42,5 +42,5 @@ uninstall:
 check:
 	test -f $(TARGET)
 
-README:
+README: nmfd.1
 	groff -man -T utf8 nmfd.1 | col -b > README
