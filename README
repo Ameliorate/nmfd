@@ -57,7 +57,7 @@ EXAMPLES
        In  the	following  example,  the buttons 1 and 3 are pressed in order,
        then the button 3 is pressed and held down.  Finally, the  forward  and
        backward	 buttons  are  pressed in order.  This example requires Driver
-       Mode to be set for your mouse in order for the  foreward	 and  backward
+       Mode to be set for your mouse in order for  the	forward	 and  backward
        buttons to work.
 
        $ nmfd
