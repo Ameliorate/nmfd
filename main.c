@@ -52,17 +52,23 @@ int main(int argc, char **argv)
                 return 0;
         }
 
-        int grab = !(argc == 2 && (!strcmp(argv[1], "--no-grab") || !strcmp(argv[1], "-n")));
+        int grab = !(argc == 2
+                     && (!strcmp(argv[1], "--no-grab")
+                         || !strcmp(argv[1], "-n")));
 
         int sidefd, extrafd = -1;
         for (int i = 0; i < DEVICES_COUNT; i++) {
-                if ((sidefd = open(devices[i][1], O_RDONLY)) != -1 && (extrafd = open(devices[i][2], O_RDONLY)) != -1) {
-                        fprintf(stderr, "Using device files for %s\n", devices[i][0]);
+                if ((sidefd = open(devices[i][1], O_RDONLY)) != -1
+                    && (extrafd = open(devices[i][2], O_RDONLY)) != -1) {
+                        fprintf(stderr, "Using device files for %s\n",
+                                devices[i][0]);
                         break;
                 }
         }
         if (sidefd == -1 || extrafd == -1) {
-                fputs("No naga devices found or you don't have permission to access them.\n", stderr);
+                fputs
+                    ("No naga devices found or you don't have permission to access them.\n",
+                     stderr);
                 exit(1);
         }
 

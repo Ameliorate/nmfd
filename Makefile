@@ -29,7 +29,7 @@ run: $(TARGET)
 	./$(TARGET)
 
 format:
-	indent -linux -i8 -nut -l120 *.c
+	indent -linux -i8 -nut -l80 *.c
 
 install: $(TARGET)
 	install $(TARGET) $(INSTALL_PATH)
