@@ -83,7 +83,7 @@ int main(int argc, char **argv)
                 rd = select(FD_SETSIZE, &readset, NULL, NULL, NULL);
 
                 if (rd == -1) {
-                        printf("Unknown Error: %m\n");
+                        fprintf(stderr, "Unknown Error: %m\n");
                         exit(2);        // Only programming errors here.
                 }
 
