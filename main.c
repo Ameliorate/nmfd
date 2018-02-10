@@ -62,6 +62,7 @@ int main(int argc, char **argv)
                     && (extrafd = open(devices[i][2], O_RDONLY)) != -1) {
                         fprintf(stderr, "Using device files for %s\n",
                                 devices[i][0]);
+			fflush(stderr);
                         break;
                 }
         }
@@ -126,6 +127,7 @@ int main(int argc, char **argv)
                 }
 
                 printf("%c%d\n", sign, button_num);
+		fflush(stdout);
  unimportant:
                 continue;
         }
