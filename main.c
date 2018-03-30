@@ -22,7 +22,7 @@ const char *devices[DEVICES_COUNT][3] = {
         {"Naga 2014",
          "/dev/input/by-id/usb-Razer_Razer_Naga_2014-if02-event-kbd",
          "/dev/input/by-id/usb-Razer_Razer_Naga_2014-event-mouse"},
-        {"Naga Molten",
+        {"Naga 2009/Naga Molten",
          "/dev/input/by-id/usb-Razer_Razer_Naga-if01-event-kbd",
          "/dev/input/by-id/usb-Razer_Razer_Naga-event-mouse"},
         {"Naga Epic Chroma",
