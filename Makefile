@@ -32,7 +32,7 @@ format:
 	indent -linux -i8 -nut -l80 *.c
 
 install: $(TARGET)
-	install $(TARGET) $(INSTALL_PATH)
+	install -D $(TARGET) $(INSTALL_PATH)
 	cp nmfd.1 $(MANUAL_PATH)
 	
 uninstall:
